@@ -1,0 +1,31 @@
+---
+title: "Eugene"
+layout: default
+permalink: "/eugene.html"
+---
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-md-8">        
+        <div class="row align-items-center mb-5">
+            <div class="col-md-9">
+                <h2 class="font-weight-bold">{{page.title}} <span class="small btn btn-outline-success btn-sm btn-round"><a href="{{ site.authors.eugene.linkedin }}">Follow</a></span> <span class="small btn btn-outline-success btn-sm btn-round"><a href="{{site.baseurl}}/{{ site.authors.eugene.cv }}">CV</a></span></h2>
+                <p><a href="{{ site.authors.eugene.site }}">{{ site.authors.eugene.site }}</a></p>
+                <p class="excerpt">{{ site.authors.eugene.bio }}</p>
+                <a target="_blank" href="{{ site.authors.eugene.github }}"><i class="fab fa-github text-muted" aria-hidden="true"></i></a>  &nbsp;
+                <a target="_blank" href="{{ site.authors.eugene.facebook }}"><i class="fab fa-facebook text-muted" aria-hidden="true"></i></a>  &nbsp;
+                <a target="_blank" href="{{ site.authors.eugene.linkedin }}"><i class="fab fa-linkedin text-muted" aria-hidden="true"></i></a>  &nbsp;
+                <a target="_blank" href="{{ site.authors.eugene.twitter }}"><i class="fab fa-twitter text-muted" aria-hidden="true"></i></a>  &nbsp;
+                <a target="_blank" href="{{ site.authors.eugene.site }}"><i class="fa fa-globe text-muted" aria-hidden="true"></i></a> &nbsp;
+            </div>
+            <div class="col-md-3 text-right">
+                <img alt="{{ site.authors.eugene.name }}" src="{{site.baseurl}}/{{ site.authors.eugene.avatar }}" class="rounded-circle" height="100" width="100">
+            </div>
+        </div>
+        <h4 class="font-weight-bold spanborder"><span>Posts by {{page.title}}</span></h4>
+            {% assign posts = site.posts | where:"author","eugene" %}
+            {% for post in posts %}
+            {% include main-loop-card.html %}
+            {% endfor %}
+    </div>
+</div>
+</div>
