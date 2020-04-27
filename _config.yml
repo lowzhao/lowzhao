@@ -3,10 +3,11 @@ name: 'lowzhao'
 description: 'Lowzhao Blog, Medium like.'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
+fa_icons: 'assets/icons/font-mfizz-2.4.1/font-mfizz.css'
 baseurl: ''
 disqus: 'lowzhao'
 email: 'lowzhao@gmail.com'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+# mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
 include: ["_pages"]
 permalink: /:title/
@@ -17,7 +18,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-admin
   
 authors:
     eugene:
@@ -52,6 +52,11 @@ defaults:
 # Syntax
 markdown: kramdown
 highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class   : 'syntax'
 
 # Paginate
 paginate: 10

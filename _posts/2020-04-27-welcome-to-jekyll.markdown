@@ -1,9 +1,22 @@
 ---
+title: Welcome to lowzhao!
 layout: post
-title:  "Welcome to Jekyll!"
-categories: [ Jekyll ]
+categories:
+- Jekyll
+- Blog
 image: assets/images/demo1.jpg
 ---
+
+Hello, this is my first time using Jekyll! I have found a template from <a href="http://jekyllthemes.org/" target="_blank">JekyllThemes</a> called **<a href="http://jekyllthemes.org/themes/mundana-jekyll-theme/" target="_blank">Mundana</a>**. Feel free to grab it for yourself and start blogging!!
+
+There is few hope I want to plant into this blog:
+1. I want to note down my **Competitive Coding** progress and hopefully discuss some problems
+2. I want to organise my **school** and log my progress in **work**
+3. I want to keep a records of **useful tools** that I came across and hopefully able to use it in the blog in the future.
+
+<br><br>
+\* *The text below are created from the template*
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
