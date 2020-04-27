@@ -51,12 +51,9 @@ defaults:
       
 # Syntax
 markdown: kramdown
-highlighter: rouge
 kramdown:
   input: GFM
-  syntax_highlighter_opts:
-    default_lang: html
-    css_class   : 'syntax'
+  syntax_highlighter: rouge
 
 # Paginate
 paginate: 10

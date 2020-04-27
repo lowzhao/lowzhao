@@ -803,4 +803,9 @@ div.a2a_full_footer {display:none;}
 		 height:280px !Important;
 	 }
  }
- 
+ .highlight{
+	border-radius: 20px;
+ }
+ .highlight pre{
+	padding:20px;
+ }
