@@ -1,5 +1,10 @@
 ---
 published: true
+layout: post
+author: eugene
+categories: editor
+tags: featured
+image: assets/images/prose.gif
 ---
 ![prose.gif]({{site.baseurl}}/assets/images/prose.gif)
 
