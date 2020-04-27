@@ -18,6 +18,4 @@ This thought hits me, do Github provide an API? If so we just need to find an ed
 
 Then I started to Google, I googled 'jekyll editor online', the results is not too useful. Then I added one more keyword, 'jekyll mobile editor online'. And voilà, I found this [Awesome Jekyll Editor](https://github.com/planetjekyll/awesome-jekyll-editors) it's possible! And most importantly it's not an app!! Which means its not platform specific! Now I am editing on [Prose.io](https://prose.io/). With just a few clicks I am able to authorize Github to directly edit on Prose.io, this allow much more flexibilty. The world is so crazy!
 
-Even uploading photos, prose will automatically upload based on the path you specified!! 
-
-
+Even uploading photos, prose will automatically upload based on the path you specified!!
