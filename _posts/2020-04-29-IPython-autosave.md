@@ -1,11 +1,5 @@
 ---
-published: false
-layout: post
-categories:
-  - Python
-  - Util
-  - Unix
-  - IPython
+published: true
 ---
 ## iPython Autosave
 
