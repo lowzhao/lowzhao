@@ -13,10 +13,13 @@ In Python 3
 
 https://en.wikipedia.org/wiki/List_of_file_formats
 
-This code below reads any kind of file or url by detecting its extension:
+This code below reads any kind of file or url by detecting its file extension (ie. `file.csv` is a `csv file`):
 ```python
 
+from pathlib import Path
+
 def read(url):
+	url = Path(url)
 	if 
 
 ```
