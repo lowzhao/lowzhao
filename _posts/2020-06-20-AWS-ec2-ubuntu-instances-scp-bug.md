@@ -1,3 +1,6 @@
+---
+published: true
+---
 ## AWS EC2 default `~/.bashrc` will cause error on SCP.
 
 Sometimes we want to scp file to AWS EC2 ubuntu instances.
