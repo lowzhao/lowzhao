@@ -34,12 +34,14 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 
-    {% include tracking-header.html %}
+    <!-- {% include tracking-header.html %} -->
 
+    {% include analytics.html %}
 
 </head>
 
 <body class="{% if page.url == "/" %} homefirstpage {% endif %}">
+    {% include gtag-body.html %}
 
     <!-- Navbar -->
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -129,8 +131,7 @@
         </div>
     </footer>
 
-    {% include tracking-footer.html %}
-    {% include analytics.html %}
+    <!-- {% include tracking-footer.html %} -->
     {% include firebase.html %}
 </body>
 
