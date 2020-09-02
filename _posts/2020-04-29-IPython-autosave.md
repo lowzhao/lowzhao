@@ -1,5 +1,8 @@
 ---
 published: true
+layout: post
+author: eugene
+categories: editor
 ---
 ## iPython Autosave
 

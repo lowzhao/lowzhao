@@ -1,5 +1,12 @@
 ---
 published: true
+layout: post
+author: eugene
+categories: cloud
+tags:
+- featured
+- AWS
+- EC2
 ---
 ## AWS EC2 default `~/.bashrc` will cause error on SCP.
 
