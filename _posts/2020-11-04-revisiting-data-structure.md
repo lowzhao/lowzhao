@@ -41,3 +41,11 @@ Most data are stored in a list/array. Which is usually applied to data with same
 ```
 
 ```
+
+
+
+
+https://www.sitepoint.com/immutability-javascript/#:~:text=The%20reason%20is%20that%20strings,Numbers%20are%20immutable%20too.
+
+https://jakevdp.github.io/PythonDataScienceHandbook/02.01-understanding-data-types.html
+
