@@ -70,13 +70,12 @@ Method 2
 ```python
 from collections import deque
 
-numNodes = 4
-graph = {
-    0: [2],  # 0 to 1 and 0 to 2
+numNodes = 3
+graph = [
+	0: [1,2],  # 0 to 1 and 0 to 2
     1: [0],
-    2: [],
-    3: [2]
-}
+    2: [2]
+]
 
 indegree = [0] * numNodes
 
