@@ -18,15 +18,15 @@ LC 210
 Steps:
 
 1. Keep two lists `visited` and `completed` same length of number of nodes and initialised to *false*
-2. define a function(`haveCycle`) to solve for children:
-    1. `visited[children]` = *true*
+2. define a function(`haveCycle`) to solve for node:
+    1. `visited[node]` = *true*
     2. for each children of node:
         1. if `visited[children]` , but not `completed[children]`:
             1. **HAVE CYCLE**
         2. else:
             1. if children `haveCycle` :
                 1. **HAVE CYCLE**
-    3. `completed[children]` = *true*
+    3. `completed[node]` = *true*
 3. for each `node`:
     1. if not `visited` and `haveCycle(node)`:
         1. **HAVE CYCLE**
