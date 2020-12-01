@@ -1,6 +1,17 @@
 ---
-published: false
+published: true
+layout: post
+author: eugene
+categories: Algorithm
+tags:
+  - lc
+  - algorithm
+  - coordinates
+  - geometry
+  - heap
 ---
+LC 218
+
 ## 218 The Skyline Problem
 
 https://leetcode.com/problems/the-skyline-problem/
@@ -48,6 +59,7 @@ The catch is that if there is some other drawn segment with the same height or t
             	1. `(x, top_heap)` is pushed into the `solution`
 5. return `solution`
 
+### Code
 
 ```python
 class Solution:
@@ -97,4 +109,3 @@ class Solution:
                         solution.append((x, -heap[0][0]))
         return solution[1:]
 ```
-
