@@ -44,19 +44,18 @@ The catch is that if there is some other drawn segment with the same height or t
 4. for each item in the `new list of buildings`:
 	1. if its the `ending point`: set have seen to `true`
     2. else: push this item into the `heap`
-    3. while `top of heap` have seen:
-    	1. pop the `heap`
+    3. while `top of heap` have seen: pop the `heap`
     4. if `heap` is empty:
-    	1. if the `last item in solution` is not `y` == `0`:
-        	1. While `last item in solution` has the same `x`:
-            	1. pop the `solution`
-            2. if the `last item in solution` is still not `y` == `0`:
-            	1. `(x, 0)` is pushed into the `solution`
-        2. else if the `last item in solution` has different `y` as the `top of the heap`:
-        	1. while `last item in solution` has the same `x`:
-            	1. pop the `solution`
-            2. if the `last item in solution` has different `y` as the `top of the heap`:
-            	1. `(x, top_heap)` is pushed into the `solution`
+    	 1. if the `last item in solution` is not `y` == `0`:
+        	 1. While `last item in solution` has the same `x`:
+            	 1. pop the `solution`
+             2. if the `last item in solution` is still not `y` == `0`:
+            	 1. `(x, 0)` is pushed into the `solution`
+         2. else if the `last item in solution` has different `y` as the `top of the heap`:
+			 1. while `last item in solution` has the same `x`:
+             	 1. pop the `solution`
+             2. if the `last item in solution` has different `y` as the `top of the heap`:
+            	 1. `(x, top_heap)` is pushed into the `solution`
 5. return `solution`
 
 ### Code
