@@ -63,9 +63,9 @@ deque;
 
 Given a safe, which can be opened by a `n` length of password of `k` characters.
 
-You can insert a list of string, in which if the string contains the password, the safe is cracked.
+You can insert an arbitary length of a string; in which if the string contains the password, the safe is cracked.
 
-Find the string that can crack all safe.
+Find the string that can crack all safe with a minimum length.
 
 $$ n \in [1,4]$$
 
