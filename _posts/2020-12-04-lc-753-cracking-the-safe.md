@@ -21,7 +21,8 @@ https://leetcode.com/problems/cracking-the-safe/
 # Notes:
 
 ## Euler Path/Circuit
-> Given a graph, find the path that goes through all edges.
+> Given a graph, euler path is the path that goes through all edges.
+
 > Euler Circuit connects the start and ends of the Euler Path.
 
 This is very similar to topological sort, but it's harder than topological sort, because the two adjacent result must be connected by an edge.
@@ -30,10 +31,12 @@ The graph is suppose to be strongly connected for all the nodes with at least on
 
 For undirected graph:
 > Euler Path exist if (0/2) # of nodes have odd number of edges.
+
 > Euler Circuit exist if all nodes have even number of edges.
 
 For directed graph:
 > Euler Path exist if all other nodes have same number of i/o edges, expect one node have extra in edges and another have extra out edges.
+
 > Euler Circuit exist if all nodes have same number of i/o edges.
 
 ## Hierholzer's algorithm
@@ -42,12 +45,12 @@ initialise a stack
 initialise a deque
 
 stack.push(
-	if graph is a euler circuit then push any node
+    if graph is a euler circuit then push any node
     else (the graph would be euler path) push the startNode (which is the node with odd number of edges or 1 extra in edge)
 )
 
 while stack is not empty:
-	top = stack.top
+    top = stack.top
     
     if outEdges of top is zero:
     	stack.pop()
@@ -74,13 +77,13 @@ $$ k \in [1,9]$$
 
 ### Examples
 
-|input|output|
-|--|--|
-|`n=1 k=1`|`0`|
-|`n=1 k=4`|`0123`|
-|`n=2 k=1`|`00`|
-|`n=2 k=2`|`001101`|
-|`n=3 k=2`|`00011100101`|
+|input||output|
+|--|--|--|
+|`n=1 k=1`||`0`|
+|`n=1 k=4`||`0123`|
+|`n=2 k=1`||`00`|
+|`n=2 k=2`||`001101`|
+|`n=3 k=2`||`00011100101`|
 
 ### Thought Process
 
@@ -103,7 +106,7 @@ The `...001...` password would have the `00` as the *front* and `01` as the *bac
 
 Therefore the *front*s and the *back*s are the nodes!
 
-Indeed if we extend our substring abit longer ie.`...0011100...` We can see that we are actually moving from `00` -> `01` -> `11` -> `10` -> `00`
+Indeed if we extend our substring abit longer ie.`...0011100...` We can see that we are actually moving from `00` -> `01` -> `11` -> `11` -> `10` -> `00`
 
 We can save space if we keep moving on the graph and not to start from some other place. Indeed if we can find the euler path that will be the optimal solution. 
 
