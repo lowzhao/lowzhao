@@ -67,8 +67,9 @@ You can insert a list of string, in which if the string contains the password, t
 
 Find the string that can crack all safe.
 
-$$ `n` \in [1,4]$$
-$$ `k` \in [1,9]$$
+$$ n \in [1,4]$$
+
+$$ k \in [1,9]$$
 
 ### Thought Process
 
