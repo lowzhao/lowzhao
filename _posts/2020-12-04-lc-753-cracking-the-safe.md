@@ -9,6 +9,7 @@ tags:
   - graph
   - euler_path
   - euler_circuit
+  - hierholzer_algorithm
   - string
 ---
 LC 753
