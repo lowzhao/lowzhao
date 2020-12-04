@@ -12,7 +12,7 @@ tags:
 ---
 LC 218
 
-## 218 The Skyline Problem
+# 218 The Skyline Problem
 
 https://leetcode.com/problems/the-skyline-problem/
 
