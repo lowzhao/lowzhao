@@ -2,7 +2,7 @@
 name: 'lowzhao'
 description: 'Lowzhao Blog, Medium like.'
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/favicon.ico'
+favicon: 'assets/images/favicon.png'
 fa_icons: 'assets/icons/font-mfizz-2.4.1/font-mfizz.css'
 baseurl: ''
 disqus: 'lowzhao'
