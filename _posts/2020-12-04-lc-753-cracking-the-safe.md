@@ -1,5 +1,15 @@
 ---
-published: false
+published: true
+layout: post
+author: eugene
+categories: Algorithm
+tags:
+  - lc
+  - algorithm
+  - graph
+  - euler_path
+  - euler_circuit
+  - string
 ---
 LC 753
 
@@ -46,15 +56,19 @@ while stack is not empty:
         	if edge is not visited:
             	stack.push(edge.toNode)
                 break;
+deque;
 ```
-
-
 
 ### Problem
 
-Given the `left`, `right` and `height` of the rectangles, these rectangles are sitting on the ground. Find the `outer contour` which is the shadow of these rectangle, the `outer contour` can be represented by a set of `(x,y)` points but no two adjacent point can have the same `y` or `x`. Sequence of the `(x,y)` is also important. 
+Given a safe, which can be opened by a `n` length of password of `k` characters.
 
-Therefore, points like `[(2,4), (3, 4), (5,0)]` is not allowed and should be `[(2,4),(5,0)]`. Also points like `[(2,4), (2,0)]` is not allowed because its ambiguious.
+You can insert a list of string, in which if the string contains the password, the safe is cracked.
+
+Find the string that can crack all safe.
+
+$$ `n` \in [1,4]$$
+$$ `k` \in [1,9]$$
 
 ### Thought Process
 
@@ -143,4 +157,3 @@ class Solution:
                         solution.append((x, -heap[0][0]))
         return solution[1:]
 ```
-
