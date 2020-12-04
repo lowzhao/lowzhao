@@ -71,90 +71,110 @@ $$ n \in [1,4]$$
 
 $$ k \in [1,9]$$
 
+### Examples
+
+|input|output|
+|--|--|
+|`n=1 k=1`|`0`|
+|`n=1 k=4`|`0123`|
+|`n=2 k=1`|`00`|
+|`n=2 k=2`|`001101`|
+|`n=3 k=2`|`00011100101`|
+
 ### Thought Process
 
-First we need to note that we only changes state(add new solution) when we are seeing a new point of the building(starting point/ending point).
+The first string we can think of which is the worst solution is to concatenate all combination password as one.
 
-And a statement in the problem, 
+`n=2 k=2` then `00011011` can be the solution.
 
-> The output is a list of "key points" (red dots in Figure B) in the format of [ [x1,y1], [x2, y2], [x3, y3], ... ] that uniquely defines a skyline. **A key point is the left endpoint of a horizontal line segment.**
+Next step is that can see that if we merge two password that have parts that are the same. Ie. 
+`00` and `01` have the same `0` one at the *front* and another at the *back*.
 
-should sparks some ideas.
+In which we can see that `00` and `01` are like the edge between different nodes from *front* to *back*.
 
-> At x, if we keep a pool(array/heap) of heights, and the highest heights is the contour we need to draw.
+But what is the node though? 
 
-The catch is that if there is some other drawn segment with the same height or the same x, then we don't draw them.
+When `n` is 3
+
+The `...010...` password would have the `01` as the *front* and `10` as the *back*.
+
+The `...001...` password would have the `00` as the *front* and `01` as the *back*.
+
+Therefore the *front*s and the *back*s are the nodes!
+
+Indeed if we extend our substring abit longer ie.`...0011100...` We can see that we are actually moving from `00` -> `01` -> `11` -> `10` -> `00`
+
+We can save space if we keep moving on the graph and not to start from some other place. Indeed if we can find the euler path that will be the optimal solution. 
+
+Recall that a graph contains a euler path if it satisfy 
+> Euler Path exist if all other nodes have same number of i/o edges, expect one node have extra in edges and another have extra out edges.
+
+Since all node have `k` edges, the euler path requirements is satisfied!
+
+So we can just perform the euler path search.
 
 ### Solution
 
-1. Create a `new list of the buildings` to be sorted by `left` and `right`.
-2. Create a new array, `have_seen` initialised `false` with length of the buildings. Because its easier this way, than to pop arbitary item out of the heap.
-3. Create a `heap`
-4. for each item in the `new list of buildings`:
-	1. if its the `ending point`: set have seen to `true`
-    2. else: push this item into the `heap`
-    3. while `top of heap` have seen:
-    	1. pop the `heap`
-    4. if `heap` is empty:
-    	1. if the `last item in solution` is not `y` == `0`:
-        	1. While `last item in solution` has the same `x`:
-            	1. pop the `solution`
-            2. if the `last item in solution` is still not `y` == `0`:
-            	1. `(x, 0)` is pushed into the `solution`
-        2. else if the `last item in solution` has different `y` as the `top of the heap`:
-        	1. while `last item in solution` has the same `x`:
-            	1. pop the `solution`
-            2. if the `last item in solution` has different `y` as the `top of the heap`:
-            	1. `(x, top_heap)` is pushed into the `solution`
-5. return `solution`
+1. initialise some values:
+	1. `visited` boolean array of False - edge visited
+    2. `out` int array of k - out edges of nodes.
+    3. `ten_to_n` - 10^n
+    4. `stack` - we perform our operation on the item of stack
+    	1. put node `0000`(which is same as `0`) into `stack`
+    5. `path` - our result
+2. while `stack` is not empty:
+    1. if `top` of the `stack` does not have out edges (`out[top]` == 0):
+        1. pop the top of the `stack`
+        2. add `top` to `path`
+    2. else:
+    	1. dont pop the top of the `stack`
+        2. for each out `edge`:
+            1. if not `edge` is not `visited`:
+            	1. set `edge` `visited` to True
+                2. reduce out of the node(`top`) by one (`out[top]--`)
+                3. add the `node` point by the other side of the `edge` to `stack`
+                4. break
+3. the reverse of the `path` is the solution
+    
 
 ### Code
 
 ```python
 class Solution:
-    def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
+    def crackSafe(self, n: int, k: int) -> str:
+        if n == 1:
+            return ''.join(map(str,range(k)))
         
-        solution = [(-1,0)]
-        buildingRep = []
+        visited = [False] * (10**4);
         
-        for idx, (l, r, h) in enumerate(buildings):
-            buildingRep.append((l, (idx, l, h)))
-            buildingRep.append((r, (idx, r, 0)))
+        out = [k] * (10**4);
         
-        buildingRep.sort()
+        ten_to_n = 10**n;
         
-        buildingSeen = [False]*10000
+        stack = [0]
         
-        heap = []
+        path = []
         
-        push = heapq.heappush
-        pop = heapq.heappop
-        # heapq.heappush
-        # heapq.heappop
-        # heapq.heapify
         
-        for b_x, (idx, x, y) in buildingRep:
+        while stack:
+            # print(stack)
+            top = stack[-1];
             
-            if y == 0:
-                buildingSeen[idx] = True
-                
+            if out[top] == 0:
+                stack.pop();                
+                path.append(top)
             else:
-                push(heap, (-y, idx))
-            
-            while heap and buildingSeen[heap[0][1]]:
-                pop(heap)
-            
-            if not heap:
-                if solution[-1][1] != 0:
-                    while solution[-1][0] == x:
-                        solution.pop()
-                    if solution[-1][1] != 0:
-                        solution.append((x, 0))
-            else:
-                if solution[-1][1] != -heap[0][0]:
-                    while solution[-1][0] == x:
-                        solution.pop()
-                    if solution[-1][1] != -heap[0][0]:
-                        solution.append((x, -heap[0][0]))
-        return solution[1:]
+                for edgeMod in range(k):
+                    
+                    edge = (top * 10) % ten_to_n + edgeMod
+                    if not visited[edge]:
+                        visited[edge] = True;
+                        out[top] -= 1;
+                        stack.append(edge%(ten_to_n//10));
+                        break;
+        path = list(reversed(path))
+        return str(path[1]).zfill(n) + ''.join(map(lambda x: str(x % 10), path[2:]))
+        
+        
+    
 ```
