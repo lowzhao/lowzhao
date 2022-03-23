@@ -4,6 +4,7 @@ layout: post
 author: eugene
 categories: Kubernetes
 tags:
+  - featured
   - k3s
   - helm
   - helm_controller
