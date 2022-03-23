@@ -7,7 +7,7 @@ tags:
   - k3s
   - helm
   - helm_controller
-  - kubernets
+  - kubernetes
   - aws
   - aws_ecr
 ---
