@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 author: eugene
 categories: Kubernetes
@@ -61,4 +61,3 @@ If you want to delete this helm release(terminology of Helm) you can do `kubectl
 
 Also for more information on how to use Helm Controller read this:
 https://rancher.com/docs/k3s/latest/en/helm/
-
