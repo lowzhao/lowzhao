@@ -1,5 +1,15 @@
 ---
 published: false
+layout: post
+author: eugene
+categories: Kubernetes
+tags:
+  - k3s
+  - helm
+  - helm_controller
+  - kubernets
+  - aws
+  - aws_ecr
 ---
 ## K3s AWS ECR Key refershing
 
@@ -15,6 +25,8 @@ My current cluster installed with [K3s](https://k3s.io/) which is the smallest m
 ### Execution
 
 With K3s comes the benefit of Helm Controller. The Rancher's [Helm Controller](https://github.com/k3s-io/helm-controller) made everything easier by allowing us to install helm chart as a config similar to Kubernetes components(kudos to Kubernetes CRD). 
+
+You may modify the `NAMESPACE` to your desired namespace.
 
 Example `helm_chart.yaml` file.
 ```yaml
@@ -39,6 +51,8 @@ spec:
 By `kubectl apply -f helm_chart.yaml` k3s will automatically install the Helm chart similar to how you would do `helm install` and `helm upgrade`.
 
 ### Extra
+
+After the setup complete there would have new pods in the namespace `aws-multi-ecr-credentials-NAMESPACE-ns` responsible to dealing with the credentials and create kubernets secret(name `aws-registry-AWS_ACCOUNT_ID`) in the `targetNamespace` you want.
 
 K3s will creates new pods with the prefix `helm-install` in the namespace `kube-system` you may check the logs of the pods to debug the installation.
 
