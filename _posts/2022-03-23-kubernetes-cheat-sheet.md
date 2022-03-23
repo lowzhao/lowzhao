@@ -44,7 +44,7 @@ kubectl config set-context --current --namespace=namespace;
 kubectl create job --from=cronjob/<name of cronjob> <name of job> -n namespace;
 ```
 
-\* I highly suggest learning the basics of the Kubernetes from this [Youtube by Kubernetes Tutorial for Beginners \[FULL COURSE in 4 Hours\] by TechWorld with Nana][Youtube by Kubernetes Tutorial for Beginners \[FULL COURSE in 4 Hours\] by TechWorld with Nana] although it is lengthy and read kubernetes components configuration from the [reference][Reference] instead of the [website](https://kubernetes.io/docs/home/) where kubernetes provided, they are lengthy and confusing. 
+\* I highly suggest learning the basics of the Kubernetes from this [Youtube by Kubernetes Tutorial for Beginners \[FULL COURSE in 4 Hours\] by TechWorld with Nana](Youtube by Kubernetes Tutorial for Beginners \[FULL COURSE in 4 Hours\] by TechWorld with Nana) although it is lengthy and read kubernetes components configuration from the [reference](Reference) instead of the [website](https://kubernetes.io/docs/home/) where kubernetes provided, they are lengthy and confusing. 
 
 [Reference]: https://kubernetes.io/docs/reference/kubernetes-api/
 [Youtube by Kubernetes Tutorial for Beginners \[FULL COURSE in 4 Hours\] by TechWorld with Nana]: https://www.youtube.com/watch?v=X48VuDVv0do
