@@ -59,6 +59,8 @@ K3s will creates new pods with the prefix `helm-install` in the namespace `kube-
 
 If you want to delete this helm release(terminology of Helm) you can do `kubectl delete -f helm_chart.yaml`
 
+In AWS you need to be careful about how your VPC cannot connect to each other, the k3s being able to connect to the master node through the private ip does not means that the neccessary port are resolved, check the security group and open the corrent connection between nodes so you don't face the problem.
+
 
 Also for more information on how to use Helm Controller read this:
 https://rancher.com/docs/k3s/latest/en/helm/
