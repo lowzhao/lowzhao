@@ -39,6 +39,21 @@ kubectl logs component componentName -n namespace;
 kubectl config set-context --current --namespace=namespace;
 ```
 
+### Rolling update/restart
+`rollout` instead of `rolling`
+```bash
+kubectl rollout restart deployment/deployment_name;
+
+# to revert
+kubectl rollout undo deployment/deployment_name;
+
+# to list/check history
+kubectl rollout history deployment/deployment_name;
+
+# to describe history of a revision X
+kubectl rollout history deployment/deployment_name --revision X;
+```
+
 ### Trigger a cronjob
 ```bash
 kubectl create job --from=cronjob/<name of cronjob> <name of job> -n namespace;
