@@ -1,5 +1,19 @@
 ---
-published: false
+published: true
+layout: post
+author: eugene
+categories: Kubernetes
+tags:
+  - kubernetes
+  - AWS
+  - MongoDB
+  - Helm
+  - PersistentVolume
+  - PersistentVolumeClaim
+  - AWS EBS
+  - Multi-Attach
+  - Data Migration
+  - Kubernetes Storage
 ---
 
 ## Migrating Standalone MongoDb Database to Kubernetes on AWS
