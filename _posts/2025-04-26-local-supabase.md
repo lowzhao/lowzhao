@@ -62,6 +62,36 @@ I am also using sudoless docker which means I need to update this part of the `.
 DOCKER_SOCKET_LOCATION=docker_socket_location
 ```
 
+## Customization
+
+### Default Port for supabase
+
+The default port for the docker compose is `8000` we can modify them from the `.env` file here:
+
+```bash
+
+############
+# API Proxy - Configuration for the Kong Reverse proxy.
+############
+
+KONG_HTTP_PORT=8000 # change to something else
+KONG_HTTPS_PORT=8443 # change to something
+```
+
+### Setup SMTP for sending emails
+
+Get a SMTP credentials for this purpose.
+
+```bash
+# .env
+
+SMTP_ADMIN_EMAIL=admin@example.com
+SMTP_HOST=supabase-mail
+SMTP_PORT=2500
+SMTP_USER=fake_mail_user
+SMTP_PASS=fake_mail_password
+SMTP_SENDER_NAME=fake_sender
+```
 
 ## Exporting Data from Supabase
 
